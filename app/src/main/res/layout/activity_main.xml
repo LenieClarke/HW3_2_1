@@ -1,0 +1,582 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/result"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/background_dark"
+        android:textColor="@android:color/white"
+        android:gravity="end"
+        android:padding="10dp"
+        android:text="0"
+        android:textSize="50sp" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/result">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/surnameLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/name_K"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/k"
+                android:textSize="25sp"
+                app:layout_constraintEnd_toStartOf="@+id/name_U"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintHorizontal_chainStyle="spread"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/name_U"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/u"
+                android:textSize="25sp"
+                app:layout_constraintEnd_toStartOf="@+id/name_R"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/name_K"
+                app:layout_constraintTop_toTopOf="@id/name_K" />
+
+            <TextView
+                android:id="@+id/name_R"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/r"
+                android:textSize="25sp"
+                app:layout_constraintEnd_toStartOf="@+id/name_B"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/name_U"
+                app:layout_constraintTop_toTopOf="@id/name_K" />
+
+            <TextView
+                android:id="@+id/name_B"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/b"
+                android:textSize="25sp"
+                app:layout_constraintEnd_toStartOf="@+id/name_A"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/name_R"
+                app:layout_constraintTop_toTopOf="@id/name_K" />
+
+            <TextView
+                android:id="@+id/name_A"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/a"
+                android:textSize="25sp"
+                app:layout_constraintEnd_toStartOf="@+id/name_T"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/name_B"
+                app:layout_constraintTop_toTopOf="@id/name_K" />
+
+            <TextView
+                android:id="@+id/name_T"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/t"
+                android:textSize="25sp"
+                app:layout_constraintEnd_toStartOf="@+id/name_O"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/name_A"
+                app:layout_constraintTop_toTopOf="@id/name_K" />
+
+            <TextView
+                android:id="@+id/name_O"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/o"
+                android:textSize="25sp"
+                app:layout_constraintEnd_toStartOf="@+id/name_V"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/name_T"
+                app:layout_constraintTop_toTopOf="@id/name_K" />
+
+            <TextView
+                android:id="@+id/name_V"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/v"
+                android:textSize="25sp"
+                app:layout_constraintEnd_toStartOf="@+id/name_A2"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/name_O"
+                app:layout_constraintTop_toTopOf="@id/name_K" />
+
+            <TextView
+                android:id="@+id/name_A2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/a"
+                android:textSize="25sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/name_V"
+                app:layout_constraintTop_toTopOf="@id/name_K" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <LinearLayout
+            android:id="@+id/firstLineLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/surnameLayout"
+            android:layout_toLeftOf="@id/snLayout"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/clearingBtn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="C"
+                android:textSize="30sp"
+                android:padding="20dp"/>
+
+            <Button
+                android:id="@+id/plus-minusBtn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="+/-"
+                android:textSize="30sp"
+                android:padding="20dp"/>
+
+            <Button
+                android:id="@+id/percentBtn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="%"
+                android:textSize="30sp"
+                android:padding="20dp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/secondLineLayout"
+            android:layout_below="@id/firstLineLayout"
+            android:layout_toLeftOf="@id/snLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/sevenBtn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="7"
+                android:textSize="30sp"
+                android:padding="20dp" />
+
+            <Button
+                android:id="@+id/eightBtn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="8"
+                android:textSize="30sp"
+                android:padding="20dp" />
+
+            <Button
+                android:id="@+id/nineBtn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="9"
+                android:textSize="30sp"
+                android:padding="20dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/thirdLineLayout"
+            android:layout_below="@id/secondLineLayout"
+            android:layout_toLeftOf="@id/snLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/fourBtn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="4"
+                android:textSize="30sp"
+                android:padding="20dp" />
+
+            <Button
+                android:id="@+id/fiveBtn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="5"
+                android:textSize="30sp"
+                android:padding="20dp" />
+
+            <Button
+                android:id="@+id/sixBtn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="6"
+                android:textSize="30sp"
+                android:padding="20dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/fourthLineLayout"
+            android:layout_below="@id/thirdLineLayout"
+            android:layout_toLeftOf="@id/snLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/oneBtn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="1"
+                android:textSize="30sp"
+                android:padding="20dp" />
+
+            <Button
+                android:id="@+id/twoBtn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="2"
+                android:textSize="30sp"
+                android:padding="20dp" />
+
+            <Button
+                android:id="@+id/threeBtn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="3"
+                android:textSize="30sp"
+                android:padding="20dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/fifthLineLayout"
+            android:layout_below="@id/fourthLineLayout"
+            android:layout_toLeftOf="@id/snLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/zeroBtn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:text="0"
+                android:textSize="30sp"
+                android:padding="20dp" />
+
+            <Button
+                android:id="@+id/decimalPointBtn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="."
+                android:textSize="30sp"
+                android:padding="20dp" />
+        </LinearLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/snLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/nLayout"
+            android:layout_below="@id/surnameLayout"
+            android:layout_marginLeft="3dp"
+            android:layout_marginRight="3dp"
+            android:layout_toLeftOf="@id/actionPanelLayout">
+
+            <TextView
+                android:id="@+id/snK"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/k"
+                android:textSize="25sp"
+                app:layout_constraintBottom_toTopOf="@+id/snU"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_chainStyle="spread" />
+
+            <TextView
+                android:id="@+id/snU"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/u"
+                android:textSize="25sp"
+                app:layout_constraintBottom_toTopOf="@+id/snR"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/snK" />
+
+            <TextView
+                android:id="@+id/snR"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/r"
+                android:textSize="25sp"
+                app:layout_constraintBottom_toTopOf="@+id/snB"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/snU" />
+
+            <TextView
+                android:id="@+id/snB"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/b"
+                android:textSize="25sp"
+                app:layout_constraintBottom_toTopOf="@+id/snA"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/snR" />
+
+            <TextView
+                android:id="@+id/snA"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/a"
+                android:textSize="25sp"
+                app:layout_constraintBottom_toTopOf="@+id/snT"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/snB" />
+
+            <TextView
+                android:id="@+id/snT"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/t"
+                android:textSize="25sp"
+                app:layout_constraintBottom_toTopOf="@+id/snO"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/snA" />
+
+            <TextView
+                android:id="@+id/snO"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/o"
+                android:textSize="25sp"
+                app:layout_constraintBottom_toTopOf="@+id/snV"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/snT" />
+
+            <TextView
+                android:id="@+id/snV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/v"
+                android:textSize="25sp"
+                app:layout_constraintBottom_toTopOf="@+id/snA2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/snO" />
+
+            <TextView
+                android:id="@+id/snA2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/a"
+                android:textSize="25sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/snV" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <LinearLayout
+            android:id="@+id/actionPanelLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/surnameLayout">
+
+            <Button
+                android:id="@+id/divisionBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:text="/"
+                android:textSize="30sp"
+                android:padding="20dp"
+                android:backgroundTint="@color/colorActionPanel"
+                android:textColor="@android:color/white"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/multiplicationBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:text="*"
+                android:textSize="30sp"
+                android:padding="20dp"
+                android:backgroundTint="@color/colorActionPanel"
+                android:textColor="@android:color/white"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/minusBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:text="-"
+                android:textSize="30sp"
+                android:padding="20dp"
+                android:backgroundTint="@color/colorActionPanel"
+                android:textColor="@android:color/white"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/plusBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:text="+"
+                android:textSize="30sp"
+                android:padding="20dp"
+                android:backgroundTint="@color/colorActionPanel"
+                android:textColor="@android:color/white"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/submitBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:text="="
+                android:padding="20dp"
+                android:textSize="30sp"
+                android:backgroundTint="@color/colorActionPanel"
+                android:textColor="@android:color/white"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/nLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/fifthLineLayout">
+
+            <TextView
+                android:id="@+id/n_K"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/k"
+                android:textSize="25sp"
+                app:layout_constraintEnd_toStartOf="@+id/n_U"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintHorizontal_chainStyle="spread"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/n_U"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/u"
+                android:textSize="25sp"
+                app:layout_constraintEnd_toStartOf="@+id/n_R"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/n_K"
+                app:layout_constraintTop_toTopOf="@id/n_K" />
+
+            <TextView
+                android:id="@+id/n_R"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/r"
+                android:textSize="25sp"
+                app:layout_constraintEnd_toStartOf="@+id/n_B"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/n_U"
+                app:layout_constraintTop_toTopOf="@id/n_K" />
+
+            <TextView
+                android:id="@+id/n_B"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/b"
+                android:textSize="25sp"
+                app:layout_constraintEnd_toStartOf="@+id/n_A"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/n_R"
+                app:layout_constraintTop_toTopOf="@id/n_K" />
+
+            <TextView
+                android:id="@+id/n_A"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/a"
+                android:textSize="25sp"
+                app:layout_constraintEnd_toStartOf="@+id/n_T"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/n_B"
+                app:layout_constraintTop_toTopOf="@id/n_K" />
+
+            <TextView
+                android:id="@+id/n_T"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/t"
+                android:textSize="25sp"
+                app:layout_constraintEnd_toStartOf="@+id/n_O"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/n_A"
+                app:layout_constraintTop_toTopOf="@id/n_K" />
+
+            <TextView
+                android:id="@+id/n_O"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/o"
+                android:textSize="25sp"
+                app:layout_constraintEnd_toStartOf="@+id/n_V"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/n_T"
+                app:layout_constraintTop_toTopOf="@id/n_K" />
+
+            <TextView
+                android:id="@+id/n_V"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/v"
+                android:textSize="25sp"
+                app:layout_constraintEnd_toStartOf="@+id/n_A2"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/n_O"
+                app:layout_constraintTop_toTopOf="@id/n_K" />
+
+            <TextView
+                android:id="@+id/n_A2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/a"
+                android:textSize="25sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/n_V"
+                app:layout_constraintTop_toTopOf="@id/n_K" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>
